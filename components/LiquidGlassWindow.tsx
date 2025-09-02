@@ -227,39 +227,54 @@ export default function LiquidGlassWindow({ children }: { children?: React.React
                   {/* Languages */}
                   <div className="bg-gray-200/10 rounded-lg p-3">
                     <h3 className="text-xs font-semibold text-gray-700 mb-3 text-center uppercase">Languages</h3>
-                    <div className="grid grid-cols-3 gap-2">
-                      <TechIcon name="Python" imageSrc="/python.png" />
-                      <TechIcon name="TypeScript" imageSrc="/typescript.png" />
-                      <TechIcon name="JavaScript" imageSrc="/js.png" />
-                      <TechIcon name="SQL" imageSrc="/SQL.png" />
-                      <TechIcon name="C++" imageSrc="/C++.png" />
-                      <div className="w-24 h-24"></div>
+                    <div className="flex flex-col items-center gap-2">
+                      {/* Top row - 3 items */}
+                      <div className="flex gap-2">
+                        <TechIcon name="Python" imageSrc="/python.png" />
+                        <TechIcon name="TypeScript" imageSrc="/typescript.png" />
+                        <TechIcon name="JavaScript" imageSrc="/js.png" />
+                      </div>
+                      {/* Bottom row - 2 items centered */}
+                      <div className="flex gap-2">
+                        <TechIcon name="SQL" imageSrc="/SQL.png" />
+                        <TechIcon name="C++" imageSrc="/C++.png" />
+                      </div>
                     </div>
                   </div>
 
                   {/* Frameworks & Libraries */}
                   <div className="bg-gray-200/10 rounded-lg p-3">
                     <h3 className="text-xs font-semibold text-gray-700 mb-3 text-center uppercase">Frameworks & Libraries</h3>
-                    <div className="grid grid-cols-3 gap-2">
-                      <TechIcon name="React" imageSrc="/react.png" />
-                      <TechIcon name="Next.js" imageSrc="/nextjs.png" />
-                      <TechIcon name="Vue.js" imageSrc="/vuejs.png" />
-                      <TechIcon name="Node.js" imageSrc="/nodejs.png" />
-                      <TechIcon name="FastAPI" imageSrc="/fastAPI.png" />
-                      <div className="w-24 h-24"></div>
+                    <div className="flex flex-col items-center gap-2">
+                      {/* Top row - 3 items */}
+                      <div className="flex gap-2">
+                        <TechIcon name="React" imageSrc="/react.png" />
+                        <TechIcon name="Next.js" imageSrc="/nextjs.png" />
+                        <TechIcon name="Vue.js" imageSrc="/vuejs.png" />
+                      </div>
+                      {/* Bottom row - 2 items centered */}
+                      <div className="flex gap-2">
+                        <TechIcon name="Node.js" imageSrc="/nodejs.png" />
+                        <TechIcon name="FastAPI" imageSrc="/fastAPI.png" />
+                      </div>
                     </div>
                   </div>
 
                   {/* Tools & DevOps */}
                   <div className="bg-gray-200/10 rounded-lg p-3">
                     <h3 className="text-xs font-semibold text-gray-700 mb-3 text-center uppercase">Tools & DevOps</h3>
-                    <div className="grid grid-cols-3 gap-2">
-                      <TechIcon name="Git" imageSrc="/git.png" />
-                      <TechIcon name="GitHub" imageSrc="/github.svg" />
-                      <TechIcon name="CI/CD" imageSrc="/githubactions.png" />
-                      <TechIcon name="VS Code" imageSrc="/vscode.png" />
-                      <TechIcon name="Postman" imageSrc="/postman.webp" />
-                      <div className="w-24 h-24"></div>
+                    <div className="flex flex-col items-center gap-2">
+                      {/* Top row - 3 items */}
+                      <div className="flex gap-2">
+                        <TechIcon name="Git" imageSrc="/git.png" />
+                        <TechIcon name="GitHub" imageSrc="/github.svg" />
+                        <TechIcon name="CI/CD" imageSrc="/githubactions.png" />
+                      </div>
+                      {/* Bottom row - 2 items centered */}
+                      <div className="flex gap-2">
+                        <TechIcon name="VS Code" imageSrc="/vscode.png" />
+                        <TechIcon name="Postman" imageSrc="/postman.webp" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -269,32 +284,59 @@ export default function LiquidGlassWindow({ children }: { children?: React.React
                   {/* AI/ML & Data Science */}
                   <div className="bg-gray-200/10 rounded-lg p-3">
                     <h3 className="text-xs font-semibold text-gray-700 mb-3 text-center uppercase">AI/ML & Data Science</h3>
-                    <div className="grid grid-cols-3 gap-2">
-                      <TechIcon name="GPT-4" imageSrc="/gpt4.png" />
-                      <TechIcon name="LangChain" imageSrc="/langchain.webp" />
-                      <TechIcon name="Bedrock" imageSrc="/bedrock.png" />
-                      <TechIcon name="PyTorch" imageSrc="/pytorch.png" />
-                      <TechIcon name="TensorFlow" imageSrc="/tensorflow.png" />
-                      <TechIcon name="Pandas" imageSrc="/pandas.svg" />
-                      <TechIcon name="NumPy" imageSrc="/numpy.png" />
-                      <TechIcon name="Scikit-learn" imageSrc="/Scikitlearnpng.png" />
-                      <div className="w-24 h-24"></div>
+                    <div className="space-y-2">
+                      {/* First pyramid */}
+                      <div className="flex flex-col items-center gap-2">
+                        {/* Top row - 3 items */}
+                        <div className="flex gap-2">
+                          <TechIcon name="GPT-4" imageSrc="/gpt4.png" />
+                          <TechIcon name="LangChain" imageSrc="/langchain.webp" />
+                          <TechIcon name="Bedrock" imageSrc="/bedrock.png" />
+                        </div>
+                        {/* Bottom row - 2 items centered */}
+                        <div className="flex gap-2">
+                          <TechIcon name="PyTorch" imageSrc="/pytorch.png" />
+                          <TechIcon name="TensorFlow" imageSrc="/tensorflow.png" />
+                        </div>
+                      </div>
+                      {/* Second pyramid */}
+                      <div className="flex flex-col items-center gap-2">
+                        {/* Top row - 3 items */}
+                        <div className="flex gap-2">
+                          <TechIcon name="Pandas" imageSrc="/pandas.svg" />
+                          <TechIcon name="NumPy" imageSrc="/numpy.png" />
+                          <TechIcon name="Scikit-learn" imageSrc="/Scikitlearnpng.png" />
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   {/* Cloud & Infrastructure */}
                   <div className="bg-gray-200/10 rounded-lg p-3">
                     <h3 className="text-xs font-semibold text-gray-700 mb-3 text-center uppercase">Cloud & Infrastructure</h3>
-                    <div className="grid grid-cols-3 gap-2">
-                      <TechIcon name="AWS" imageSrc="/aws.png" />
-                      <TechIcon name="Docker" imageSrc="/docker.png" />
-                      <TechIcon name="Kubernetes" imageSrc="/kubernetes.png" />
-                      <TechIcon name="PostgreSQL" imageSrc="/postgresql.png" />
-                      <TechIcon name="MongoDB" imageSrc="/mongodb.webp" />
-                      <TechIcon name="DynamoDB" imageSrc="/dynamodb.png" />
-                      <TechIcon name="S3" imageSrc="/s3.png" />
-                      <div className="w-24 h-24"></div>
-                      <div className="w-24 h-24"></div>
+                    <div className="space-y-2">
+                      {/* First pyramid */}
+                      <div className="flex flex-col items-center gap-2">
+                        {/* Top row - 3 items */}
+                        <div className="flex gap-2">
+                          <TechIcon name="AWS" imageSrc="/aws.png" />
+                          <TechIcon name="Docker" imageSrc="/docker.png" />
+                          <TechIcon name="Kubernetes" imageSrc="/kubernetes.png" />
+                        </div>
+                        {/* Bottom row - 2 items centered */}
+                        <div className="flex gap-2">
+                          <TechIcon name="PostgreSQL" imageSrc="/postgresql.png" />
+                          <TechIcon name="MongoDB" imageSrc="/mongodb.webp" />
+                        </div>
+                      </div>
+                      {/* Second pyramid */}
+                      <div className="flex flex-col items-center gap-2">
+                        {/* Single row - 2 items */}
+                        <div className="flex gap-2">
+                          <TechIcon name="DynamoDB" imageSrc="/dynamodb.png" />
+                          <TechIcon name="S3" imageSrc="/s3.png" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

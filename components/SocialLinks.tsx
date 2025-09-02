@@ -5,7 +5,7 @@ export default function SocialLinks() {
     <div className="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-50">
       {/* GitHub */}
       <a
-        href="https://github.com/yourusername"
+        href="https://github.com/tafurfede"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-700 hover:text-gray-900 transition-colors duration-300"
@@ -18,7 +18,7 @@ export default function SocialLinks() {
 
       {/* LinkedIn */}
       <a
-        href="https://linkedin.com/in/yourusername"
+        href="https://www.linkedin.com/in/tafurfede/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-700 hover:text-gray-900 transition-colors duration-300"
