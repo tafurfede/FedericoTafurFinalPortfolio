@@ -72,7 +72,7 @@ export default function Home() {
         >
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-4">Federico Tafur</h1>
-            <p className="text-2xl text-gray-600">Full Stack Developer</p>
+            <p className="text-2xl text-gray-600">AI/ML Engineer & Data Scientist</p>
           </div>
           
           <div 
