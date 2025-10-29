@@ -34,7 +34,7 @@ export default function DashboardWindow() {
           <div className="flex-1 bg-gradient-to-br from-gray-100 via-white to-gray-50 p-12 relative">
             {/* Schedule Widget */}
             <div className="absolute top-12 left-12 w-80 h-80 bg-white/90 rounded-xl p-6 shadow-lg">
-              <div className="text-sm text-gray-600 mb-3">Today's Schedule</div>
+              <div className="text-sm text-gray-600 mb-3">Today&apos;s Schedule</div>
               <div className="space-y-3">
                 <div className="h-3 bg-gray-200 rounded animate-pulse"></div>
                 <div className="h-3 bg-gray-200 rounded animate-pulse w-5/6"></div>

@@ -8,16 +8,18 @@ export default function LiquidGlass() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    const canvasEl = canvas as HTMLCanvasElement;
     
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    const maybeCtx = canvasEl.getContext("2d");
+    if (!maybeCtx) return;
+    const ctx: CanvasRenderingContext2D = maybeCtx;
 
     // Set canvas size
     const resizeCanvas = () => {
-      const parent = canvas.parentElement;
+      const parent = canvasEl.parentElement;
       if (parent) {
-        canvas.width = parent.clientWidth;
-        canvas.height = parent.clientHeight;
+        canvasEl.width = parent.clientWidth;
+        canvasEl.height = parent.clientHeight;
       }
     };
     resizeCanvas();
@@ -65,13 +67,13 @@ export default function LiquidGlass() {
         this.phase += params.waveSpeed;
 
         // Boundary reflection with refraction effect
-        if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) {
+        if (this.x - this.radius < 0 || this.x + this.radius > canvasEl.width) {
           this.vx *= -params.refraction;
-          this.x = Math.max(this.radius, Math.min(canvas.width - this.radius, this.x));
+          this.x = Math.max(this.radius, Math.min(canvasEl.width - this.radius, this.x));
         }
-        if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
+        if (this.y - this.radius < 0 || this.y + this.radius > canvasEl.height) {
           this.vy *= -params.refraction;
-          this.y = Math.max(this.radius, Math.min(canvas.height - this.radius, this.y));
+          this.y = Math.max(this.radius, Math.min(canvasEl.height - this.radius, this.y));
         }
 
         // Life decay
@@ -84,8 +86,8 @@ export default function LiquidGlass() {
       }
 
       respawn() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * canvasEl.width;
+        this.y = Math.random() * canvasEl.height;
         this.vx = (Math.random() - 0.5) * 2;
         this.vy = (Math.random() - 0.5) * 2;
         this.life = 1;
@@ -176,17 +178,17 @@ export default function LiquidGlass() {
 
     for (let i = 0; i < particleCount; i++) {
       particles.push(
-        new LiquidParticle(Math.random() * canvas.width, Math.random() * canvas.height)
+        new LiquidParticle(Math.random() * canvasEl.width, Math.random() * canvasEl.height)
       );
     }
 
     // Mouse interaction
-    let mouseX = canvas.width / 2;
-    let mouseY = canvas.height / 2;
+    let mouseX = canvasEl.width / 2;
+    let mouseY = canvasEl.height / 2;
     let mouseActive = false;
 
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
+      const rect = canvasEl.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
       mouseActive = true;
@@ -196,15 +198,15 @@ export default function LiquidGlass() {
       mouseActive = false;
     };
 
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseleave", handleMouseLeave);
+    canvasEl.addEventListener("mousemove", handleMouseMove);
+    canvasEl.addEventListener("mouseleave", handleMouseLeave);
 
     // Animation loop
     let animationId: number;
     const animate = () => {
       // Clear canvas with slight trail effect
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, canvasEl.width, canvasEl.height);
 
       // Update and draw particles
       particles.forEach((particle) => {
@@ -256,8 +258,8 @@ export default function LiquidGlass() {
     // Cleanup
     return () => {
       cancelAnimationFrame(animationId);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      canvasEl.removeEventListener("mousemove", handleMouseMove);
+      canvasEl.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("resize", resizeCanvas);
     };
   }, []);

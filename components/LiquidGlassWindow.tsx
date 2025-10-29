@@ -36,15 +36,19 @@ export default function LiquidGlassWindow({ children }: { children?: React.React
     const svg = svgRef.current;
     if (!container || !canvas || !svg) return;
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    const maybeCtx = canvas.getContext("2d");
+    if (!maybeCtx) return;
+    const ctx: CanvasRenderingContext2D = maybeCtx;
 
     const width = 900;
     const height = 700;
     const canvasDPI = 1;
 
-    canvas.width = width * canvasDPI;
-    canvas.height = height * canvasDPI;
+    const svgEl: SVGSVGElement = svg;
+    const canvasEl: HTMLCanvasElement = canvas;
+
+    canvasEl.width = width * canvasDPI;
+    canvasEl.height = height * canvasDPI;
 
     function smoothStep(a: number, b: number, t: number): number {
       t = Math.max(0, Math.min(1, (t - a) / (b - a)));
@@ -115,11 +119,11 @@ export default function LiquidGlassWindow({ children }: { children?: React.React
 
       ctx.putImageData(new ImageData(data, w, h), 0, 0);
       
-      const feImage = svg.querySelector(`#${id}_map`) as SVGFEImageElement;
-      const feDisplacementMap = svg.querySelector(`#${id}_displacement`) as SVGFEDisplacementMapElement;
+      const feImage = svgEl.querySelector(`#${id}_map`) as SVGFEImageElement;
+      const feDisplacementMap = svgEl.querySelector(`#${id}_displacement`) as SVGFEDisplacementMapElement;
       
       if (feImage && feDisplacementMap) {
-        feImage.setAttribute("href", canvas.toDataURL());
+        feImage.setAttribute("href", canvasEl.toDataURL());
         feDisplacementMap.setAttribute("scale", (maxScale / canvasDPI).toString());
       }
     }
