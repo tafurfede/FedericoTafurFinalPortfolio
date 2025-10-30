@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import NavigationIndicator from "@/components/NavigationIndicator";
 import SocialLinks from "@/components/SocialLinks";
 import LiquidGlassWindow from "@/components/LiquidGlassWindow";
@@ -97,14 +98,51 @@ export default function Home() {
 
         <section
           ref={(el) => { if (el) sectionsRef.current[1] = el; }}
-          className="min-h-screen flex flex-col items-center justify-center p-24 bg-white snap-start"
+          className="min-h-screen flex items-center justify-center p-24 bg-white snap-start"
         >
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">About Me</h2>
-            <p className="text-xl text-gray-600 max-w-2xl">
-              Passionate developer with expertise in modern web technologies.
-              Building innovative solutions with Next.js, TypeScript, and more.
-            </p>
+          <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+            {/* Left image */}
+            <div className="md:col-span-2">
+              <div className="w-full aspect-[4/5] relative rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                <Image
+                  src="/fede.png"
+                  alt="Federico Tafur portrait"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+            </div>
+
+            {/* Right content */}
+            <div className="md:col-span-3">
+              <h2 className="text-4xl font-bold mb-4">About Me</h2>
+              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <p>
+                  I’m an <span className="font-semibold">AI/ML Engineer & Data Scientist</span> passionate about the intersection of
+                  <span className="font-medium"> computer science</span>, <span className="font-medium">finance</span>, and
+                  <span className="font-medium"> data-driven systems</span>. I love translating complex problems into elegant,
+                  production-ready solutions that create real-world meaning.
+                </p>
+                <p>
+                  Recently, I built <span className="font-semibold">Chronos</span>, an ML-driven trading algorithm focused on signal
+                  generation, risk-aware execution, and robust evaluation. Chronos combines feature engineering,
+                  modern model architectures, and careful validation to turn market structure into actionable strategies.
+                </p>
+                <p>
+                  Beyond individual projects, I’m driven by <span className="font-semibold">entrepreneurship</span>—bootstrapping
+                  products that feel revolutionary: useful, fast, and trustworthy. I enjoy the full stack of building
+                  from research to deployment: experiment design, modeling, API/product integration, and iteration with users.
+                </p>
+                <p>
+                  Before tech, I pursued sports at an elite level: I played <span className="font-semibold">professional
+                  first-division soccer in Costa Rica</span> and later moved to the United States to compete in
+                  <span className="font-semibold"> NCAA Division I college soccer</span>. That background shaped my
+                  commitment to discipline, teamwork, and performance under pressure—values I bring to every build.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -112,11 +150,87 @@ export default function Home() {
           ref={(el) => { if (el) sectionsRef.current[2] = el; }}
           className="min-h-screen flex flex-col items-center justify-center p-24 bg-white snap-start"
         >
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Projects</h2>
-            <p className="text-xl text-gray-600">
-              Showcase of my recent work and achievements
-            </p>
+          <div className="w-full max-w-6xl">
+            <h2 className="text-4xl font-bold mb-6 text-center">Projects</h2>
+            <p className="text-lg text-gray-600 text-center mb-10">Selected work across AI/ML, data, and product.</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Chronos */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-900">Chronos — ML Trading System</h3>
+                  <a
+                    href="https://github.com/tafurfede/Tradient"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-700 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <p className="text-sm text-gray-700 mt-3">
+                  Ensemble-driven trading engine with 200+ engineered features, risk-aware execution, and
+                  real-time decisioning. Backtesting, monitoring, and Dockerized deployment.
+                </p>
+              </div>
+
+              {/* Project 2 */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-900">AI Document Q&A</h3>
+                  <a
+                    href="https://github.com/tafurfede"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-700 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <p className="text-sm text-gray-700 mt-3">
+                  Retrieval-augmented generation app with chunking, embeddings, and streaming answers. Built
+                  with Next.js, TypeScript, and vector search.
+                </p>
+              </div>
+
+              {/* Project 3 */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-900">Time-Series Forecasting Suite</h3>
+                  <a
+                    href="https://github.com/tafurfede"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-700 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <p className="text-sm text-gray-700 mt-3">
+                  Hierarchical forecasting toolkit using Prophet/LSTM/XGBoost with automated feature creation
+                  and model selection.
+                </p>
+              </div>
+
+              {/* Project 4 */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-900">MLOps Pipeline</h3>
+                  <a
+                    href="https://github.com/tafurfede"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-700 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <p className="text-sm text-gray-700 mt-3">
+                  Reproducible training and deployment with Docker, CI/CD, experiment tracking, and model
+                  registry for robust releases.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
