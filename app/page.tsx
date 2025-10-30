@@ -151,8 +151,8 @@ export default function Home() {
           className="min-h-screen flex flex-col items-center justify-center p-24 bg-white snap-start"
         >
           <div className="w-full max-w-6xl">
-            <h2 className="text-4xl font-bold mb-6 text-center">Projects</h2>
-            <p className="text-lg text-gray-600 text-center mb-10">Selected work across AI/ML, data, and product.</p>
+            <h2 className="text-4xl font-bold mb-6 text-center">Projects & Experience</h2>
+            <p className="text-lg text-gray-600 text-center mb-10">Selected projects and experience across AI/ML, data, and product.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Chronos */}
@@ -174,41 +174,37 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Project 2 */}
+              {/* Oaklet */}
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">AI Document Q&A</h3>
-                  <a
-                    href="https://github.com/tafurfede"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-700 hover:underline"
-                  >
-                    GitHub
-                  </a>
+                  <h3 className="text-lg font-semibold text-gray-900">Oaklet</h3>
                 </div>
                 <p className="text-sm text-gray-700 mt-3">
-                  Retrieval-augmented generation app with chunking, embeddings, and streaming answers. Built
-                  with Next.js, TypeScript, and vector search.
+                  AI‑native healthcare platform where intelligent agents power an EHR, documentation,
+                  treatment planning, billing, and analytics. As <span className="font-semibold">Founder & Lead Engineer</span>,
+                  I led product and architecture: multi‑agent orchestration, secure data ingestion and RAG,
+                  HIPAA‑aligned practices, ISO‑style controls, and a Next.js + FastAPI stack deployed to cloud
+                  infrastructure with real‑time telemetry.
                 </p>
               </div>
 
-              {/* Project 3 */}
+              {/* Nexus Research Paper */}
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">Time-Series Forecasting Suite</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Nexus Research Paper</h3>
                   <a
-                    href="https://github.com/tafurfede"
+                    href="https://nexus-research-paper.vercel.app/NEXUS_RESEARCH_PAPER.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-blue-700 hover:underline"
                   >
-                    GitHub
+                    Read
                   </a>
                 </div>
                 <p className="text-sm text-gray-700 mt-3">
-                  Hierarchical forecasting toolkit using Prophet/LSTM/XGBoost with automated feature creation
-                  and model selection.
+                  Research on a modular AI systems framework—Nexus—for composing agents, retrieval, and
+                  control layers into reliable end‑to‑end workflows. Covers design principles, evaluation
+                  methodology, and practical deployments across finance and healthcare.
                 </p>
               </div>
 
