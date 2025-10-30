@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Federico Tafur – AI/ML Engineer & Data Scientist",
   description: "Portfolio of Federico Tafur, AI/ML Engineer & Data Scientist.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
