@@ -208,23 +208,39 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Project 4 */}
+              {/* Experience Timeline */}
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">MLOps Pipeline</h3>
-                  <a
-                    href="https://github.com/tafurfede"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-700 hover:underline"
-                  >
-                    GitHub
-                  </a>
+                <h3 className="text-lg font-semibold text-gray-900">Experience Timeline</h3>
+                <div className="mt-4 space-y-3">
+                  <div className="flex gap-3">
+                    <div className="mt-1 h-2 w-2 rounded-full bg-gray-900"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Software Engineer (Lead Developer) — NexaDev Software Solutions</p>
+                      <p className="text-xs text-gray-600">Feb 2024 – Present · San José, Costa Rica · AI career‑matching platform; full SDLC, data pipelines</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="mt-1 h-2 w-2 rounded-full bg-gray-900"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Software Engineer (AI/ML Engineer) — Oaklet</p>
+                      <p className="text-xs text-gray-600">Mar 2025 – Sep 2025 · Remote · Architected AI‑native EHR; multi‑agent platform and SLOs</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="mt-1 h-2 w-2 rounded-full bg-gray-900"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Software Engineering Intern — TIMS International</p>
+                      <p className="text-xs text-gray-600">May 2024 – Aug 2024 · San José, Costa Rica · Optimized C/C++/Python; 20+ APIs</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="mt-1 h-2 w-2 rounded-full bg-gray-900"></div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Varsity Soccer Student‑Athlete — Virginia Tech & UCF (NCAA Division I)</p>
+                      <p className="text-xs text-gray-600">Jun 2022 – May 2024 · Blacksburg, VA & Orlando, FL · Leadership and high‑performance teamwork</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-700 mt-3">
-                  Reproducible training and deployment with Docker, CI/CD, experiment tracking, and model
-                  registry for robust releases.
-                </p>
               </div>
             </div>
           </div>

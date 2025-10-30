@@ -700,6 +700,12 @@ video {
 .mt-3 {
   margin-top: 0.75rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
 .block {
   display: block;
 }
@@ -754,6 +760,9 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-2 {
+  height: 0.5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -801,6 +810,9 @@ video {
 }
 .w-px {
   width: 1px;
+}
+.w-2 {
+  width: 0.5rem;
 }
 .max-w-6xl {
   max-width: 72rem;
