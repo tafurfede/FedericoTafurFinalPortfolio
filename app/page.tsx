@@ -307,11 +307,39 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-[#1a1a1a] min-h-screen flex flex-col justify-center pt-16 md:pt-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-7xl mx-auto w-full py-12 md:py-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#5f5f5f] leading-tight">
+      <section className="bg-[#1a1a1a] min-h-screen relative z-10 overflow-hidden">
+        {/* Desktop Layout (xl and up - 1280px) - Fixed positioning like Figma */}
+        <div className="hidden xl:block absolute left-[89px] top-[222px] w-[1200px]">
+          <h1 className="heading-1 text-[#5f5f5f]">
             <span>Hi, </span>
-            <span className="inline-block w-[80px] h-[48px] sm:w-[100px] sm:h-[60px] md:w-[120px] md:h-[72px] lg:w-[140px] lg:h-[84px] xl:w-[160px] xl:h-[96px] relative align-middle mx-1 md:mx-2 bg-[#010101] overflow-hidden rounded-sm">
+            <span className="inline-block w-[160px] h-[96px] relative align-middle mx-2 bg-[#010101] overflow-hidden rounded-sm">
+              <Image
+                src="/fede.png"
+                alt="Federico Tafur"
+                fill
+                className="object-cover object-top"
+              />
+            </span>
+            <span> I&apos;m </span>
+            <span className="text-white">Federico Tafur, </span>
+            <span>a </span>
+            <span className="text-white">Data Scientist & ML Engineer</span>
+          </h1>
+        </div>
+
+        {/* Desktop Contact Button */}
+        <button
+          onClick={() => scrollToSection(contactRef)}
+          className="hidden xl:block absolute left-[89px] top-[620px] bg-[#d94100] rounded-[8px] px-[32px] py-[16px] hover:bg-[#b93800] transition-colors"
+        >
+          <span className="button-text text-white">Contact Me</span>
+        </button>
+
+        {/* Tablet Layout (md to xl) */}
+        <div className="hidden md:flex xl:hidden flex-col justify-center min-h-screen pt-20 px-12 lg:px-20">
+          <h1 className="text-6xl lg:text-7xl font-light text-[#5f5f5f] leading-tight tracking-[-2px]">
+            <span>Hi, </span>
+            <span className="inline-block w-[120px] h-[72px] lg:w-[140px] lg:h-[84px] relative align-middle mx-2 bg-[#010101] overflow-hidden rounded-sm">
               <Image
                 src="/fede.png"
                 alt="Federico Tafur"
@@ -327,15 +355,41 @@ export default function Home() {
 
           <button
             onClick={() => scrollToSection(contactRef)}
-            className="mt-10 md:mt-16 bg-[#d94100] rounded-lg px-6 md:px-8 py-3 md:py-4 hover:bg-[#b93800] transition-colors"
+            className="mt-12 self-start bg-[#d94100] rounded-lg px-8 py-4 hover:bg-[#b93800] transition-colors"
           >
-            <span className="text-white font-medium text-sm md:text-base">Contact Me</span>
+            <span className="text-white font-medium text-lg">Contact Me</span>
+          </button>
+        </div>
+
+        {/* Mobile Layout (below md - 768px) */}
+        <div className="md:hidden flex flex-col justify-center min-h-screen pt-20 px-6">
+          <h1 className="text-[42px] sm:text-5xl font-light text-[#5f5f5f] leading-tight tracking-[-1px]">
+            <span>Hi, </span>
+            <span className="inline-block w-[90px] h-[54px] sm:w-[100px] sm:h-[60px] relative align-middle mx-1 bg-[#010101] overflow-hidden rounded-sm">
+              <Image
+                src="/fede.png"
+                alt="Federico Tafur"
+                fill
+                className="object-cover object-top"
+              />
+            </span>
+            <span> I&apos;m </span>
+            <span className="text-white">Federico Tafur, </span>
+            <span>a </span>
+            <span className="text-white">Data Scientist & ML Engineer</span>
+          </h1>
+
+          <button
+            onClick={() => scrollToSection(contactRef)}
+            className="mt-10 self-start bg-[#d94100] rounded-lg px-8 py-4 hover:bg-[#b93800] transition-colors"
+          >
+            <span className="text-white font-medium">Contact Me</span>
           </button>
         </div>
       </section>
 
       {/* Work Section */}
-      <section ref={workRef} className="bg-[#232323] py-16 md:py-24 lg:py-32 px-6 md:px-12 lg:px-20">
+      <section ref={workRef} className="bg-[#232323] py-16 md:py-24 lg:py-32 px-6 md:px-12 lg:px-20 relative z-0">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 md:mb-16">
