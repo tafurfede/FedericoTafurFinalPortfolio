@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     name: "Nexus",
     subtitle: "Deep Learning Trading Research",
-    image: "https://www.figma.com/api/mcp/asset/6f82514e-487a-4e2f-9862-6875266f83fe",
+    image: "/projects/nexus.png",
     url: "https://nexus-research-paper.vercel.app/NEXUS_RESEARCH_PAPER.html",
     description: "Research paper on a hybrid neural architecture (8.2M params) combining CNN, LSTM, and Transformer branches to process 200+ technical indicators and LLM-powered sentiment analysis for trading signal generation.",
     specs: [
@@ -26,7 +26,7 @@ const projects = [
     id: 2,
     name: "Oaklet",
     subtitle: "AI Healthcare Platform",
-    image: "https://www.figma.com/api/mcp/asset/fc018ae7-8ead-48b0-8f00-e5fede77ae40",
+    image: "/projects/oaklet.png",
     url: "https://oaklet.com/",
     description: "AI-native EHR platform processing patient data through intelligent agents—automating documentation, treatment insights, and billing analytics to reduce admin overhead and improve care decisions.",
     specs: [
@@ -43,7 +43,7 @@ const projects = [
     id: 3,
     name: "TIMS Suite",
     subtitle: "Enterprise SaaS Platform",
-    image: "https://www.figma.com/api/mcp/asset/02eeb929-1790-4ffa-8473-a019ecf8e337",
+    image: "/projects/tims.png",
     url: "https://marketing.timssuite.com/",
     description: "Full-stack platform handling 6-tier product sales with real-time campaign analytics—tracking customer journeys, conversion rates, and revenue metrics to optimize marketing spend and increase sales.",
     specs: [
@@ -60,7 +60,7 @@ const projects = [
     id: 4,
     name: "AI Social CRM",
     subtitle: "Intelligent Business Automation",
-    image: "https://www.figma.com/api/mcp/asset/eb8ee860-9879-46a8-94a0-b34146e37210",
+    image: "/projects/crm.png",
     url: null,
     description: "AI-powered CRM capturing customer interactions across channels—using ML to qualify leads, predict conversion likelihood, and automate responses from first touch to payment.",
     specs: [
@@ -77,7 +77,7 @@ const projects = [
     id: 5,
     name: "Transalte",
     subtitle: "Serverless NLP Pipeline",
-    image: "https://www.figma.com/api/mcp/asset/6f82514e-487a-4e2f-9862-6875266f83fe",
+    image: "/projects/nexus.png",
     url: "https://transalte-lemon.vercel.app/",
     description: "Document processing pipeline using AWS Translate and Comprehend—handles batch translations with auto language detection, preserving formatting while processing enterprise document workflows.",
     specs: [
@@ -94,7 +94,7 @@ const projects = [
     id: 6,
     name: "Tradient",
     subtitle: "ML Trading System",
-    image: "https://www.figma.com/api/mcp/asset/02eeb929-1790-4ffa-8473-a019ecf8e337",
+    image: "/projects/tims.png",
     url: "https://github.com/tafurfede/Tradient",
     description: "Quantitative trading engine with 200+ engineered features—ensemble ML models (XGBoost, LightGBM, Neural Nets) for signal generation, backtesting, and risk-adjusted position sizing.",
     specs: [
@@ -174,7 +174,6 @@ export default function Home() {
                 alt={selectedProject.name}
                 fill
                 className="object-cover"
-                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#232323] to-transparent" />
               <button
@@ -412,7 +411,6 @@ export default function Home() {
                     alt={project.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    unoptimized
                   />
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
