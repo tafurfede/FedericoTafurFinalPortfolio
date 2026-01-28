@@ -305,85 +305,60 @@ export default function Home() {
         )}
       </header>
 
-      {/* Hero Section */}
+      {/* Hero Section - Split Layout */}
       <section className="bg-[#1a1a1a] min-h-screen relative z-10 overflow-hidden">
-        {/* Desktop Layout (xl and up - 1280px) - Fixed positioning like Figma */}
-        <div className="hidden xl:block absolute left-[89px] top-[222px] w-[1200px]">
-          <h1 className="heading-1 text-[#5f5f5f]">
-            <span>Hi, </span>
-            <span className="inline-block w-[160px] h-[96px] relative align-middle mx-2 bg-[#010101] overflow-hidden rounded-sm">
-              <Image
-                src="/fede.png"
-                alt="Federico Tafur"
-                fill
-                className="object-cover object-top"
-              />
-            </span>
-            <span> I&apos;m </span>
-            <span className="text-white">Federico Tafur, </span>
-            <span>a </span>
-            <span className="text-white">Data Scientist & ML Engineer</span>
-          </h1>
-        </div>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 min-h-screen flex items-center">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center py-20 lg:py-0">
 
-        {/* Desktop Contact Button */}
-        <button
-          onClick={() => scrollToSection(contactRef)}
-          className="hidden xl:block absolute left-[89px] top-[620px] bg-[#d94100] rounded-[8px] px-[32px] py-[16px] hover:bg-[#b93800] transition-colors"
-        >
-          <span className="button-text text-white">Contact Me</span>
-        </button>
+            {/* Left - Text Content */}
+            <div className="order-2 lg:order-1">
+              <p className="text-[#d94100] text-sm md:text-base font-medium tracking-wider uppercase mb-4">
+                Data Scientist & ML Engineer
+              </p>
 
-        {/* Tablet Layout (md to xl) */}
-        <div className="hidden md:flex xl:hidden flex-col justify-center min-h-screen pt-20 px-12 lg:px-20">
-          <h1 className="text-6xl lg:text-7xl font-light text-[#5f5f5f] leading-tight tracking-[-2px]">
-            <span>Hi, </span>
-            <span className="inline-block w-[120px] h-[72px] lg:w-[140px] lg:h-[84px] relative align-middle mx-2 bg-[#010101] overflow-hidden rounded-sm">
-              <Image
-                src="/fede.png"
-                alt="Federico Tafur"
-                fill
-                className="object-cover object-top"
-              />
-            </span>
-            <span> I&apos;m </span>
-            <span className="text-white">Federico Tafur, </span>
-            <span>a </span>
-            <span className="text-white">Data Scientist & ML Engineer</span>
-          </h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] mb-6">
+                Hi, I&apos;m<br />
+                <span className="font-medium">Federico Tafur</span>
+              </h1>
 
-          <button
-            onClick={() => scrollToSection(contactRef)}
-            className="mt-12 self-start bg-[#d94100] rounded-lg px-8 py-4 hover:bg-[#b93800] transition-colors"
-          >
-            <span className="text-white font-medium text-lg">Contact Me</span>
-          </button>
-        </div>
+              <p className="text-lg md:text-xl text-[#adadad] leading-relaxed mb-8 max-w-lg">
+                Building data-driven solutions at the intersection of machine learning, finance, and software engineering.
+              </p>
 
-        {/* Mobile Layout (below md - 768px) */}
-        <div className="md:hidden flex flex-col justify-center min-h-screen pt-20 px-6">
-          <h1 className="text-[42px] sm:text-5xl font-light text-[#5f5f5f] leading-tight tracking-[-1px]">
-            <span>Hi, </span>
-            <span className="inline-block w-[90px] h-[54px] sm:w-[100px] sm:h-[60px] relative align-middle mx-1 bg-[#010101] overflow-hidden rounded-sm">
-              <Image
-                src="/fede.png"
-                alt="Federico Tafur"
-                fill
-                className="object-cover object-top"
-              />
-            </span>
-            <span> I&apos;m </span>
-            <span className="text-white">Federico Tafur, </span>
-            <span>a </span>
-            <span className="text-white">Data Scientist & ML Engineer</span>
-          </h1>
+              <div className="flex flex-wrap gap-4">
+                <button
+                  onClick={() => scrollToSection(contactRef)}
+                  className="bg-[#d94100] rounded-lg px-8 py-4 hover:bg-[#b93800] transition-colors"
+                >
+                  <span className="text-white font-medium">Get In Touch</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection(workRef)}
+                  className="border border-white/30 rounded-lg px-8 py-4 hover:bg-white/5 transition-colors"
+                >
+                  <span className="text-white font-medium">View Work</span>
+                </button>
+              </div>
+            </div>
 
-          <button
-            onClick={() => scrollToSection(contactRef)}
-            className="mt-10 self-start bg-[#d94100] rounded-lg px-8 py-4 hover:bg-[#b93800] transition-colors"
-          >
-            <span className="text-white font-medium">Contact Me</span>
-          </button>
+            {/* Right - Photo */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <div className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[480px] lg:w-[420px] lg:h-[520px]">
+                {/* Background accent */}
+                <div className="absolute inset-0 bg-[#d94100]/20 rounded-2xl transform translate-x-4 translate-y-4"></div>
+                {/* Photo container */}
+                <div className="relative w-full h-full bg-[#232323] rounded-2xl overflow-hidden border border-white/10">
+                  <Image
+                    src="/fede.png"
+                    alt="Federico Tafur"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
